@@ -6,7 +6,7 @@ import time
 # Test to reproduce the bug/error in flyfrontier site
 def test_to_reproduce_bug_in_a_travel_site(browser):
 	# Go to Frontier Airlines
-	browser.get("https://booking.flyfrontier.com/Flight/Internal#flightStatus-tab")
+	browser.get("https://booking.flyfrontier.com/Flight/#flightStatus-tab")
 	assert "Frontier Airlines" in browser.title	
 
 	# Click on Check flight status by flight number
@@ -15,7 +15,7 @@ def test_to_reproduce_bug_in_a_travel_site(browser):
 	
 	# Enter the flight number
 	search_box = browser.find_element_by_id("flightScheduleSearch_FlightNumber")
-	#search_box.send_keys("507") - valid Flight number
+	#search_box.send_keys("287") - valid Flight number
 	search_box.send_keys("Ind1234")
 	search_box.send_keys(Keys.RETURN)
 	
